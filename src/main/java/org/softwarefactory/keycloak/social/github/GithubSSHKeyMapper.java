@@ -44,7 +44,7 @@ public class GithubSSHKeyMapper extends AbstractIdentityProviderMapper {
 
   public static final String CONF_KEY_ATTRIBUTE = "keyAttribute";
 
-  private static final List<ProviderConfigProperty> configProperties = new ArrayList<>();
+  private static final List<ProviderConfigProperty> configProperties = new ArrayList<ProviderConfigProperty>();
 
   static {
     ProviderConfigProperty property = new ProviderConfigProperty();
