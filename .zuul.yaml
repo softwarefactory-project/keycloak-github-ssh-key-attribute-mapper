@@ -4,6 +4,8 @@
       jobs:
         - maven-build
         - keycloak-test-deploy:
+            required-projects:
+              - software-factory/sf-ci
             dependencies:
               - maven-build
     gate:
