@@ -1,0 +1,8 @@
+Code-Review+2: Matthieu Huin <mhuin@redhat.com>
+Workflow+1: Matthieu Huin <mhuin@redhat.com>
+Verified+2: Zuul CI <zuul@softwarefactory-project.io>
+Submitted-by: Zuul CI <zuul@softwarefactory-project.io>
+Submitted-at: Thu, 19 Nov 2020 17:55:57 +0000
+Reviewed-on: https://softwarefactory-project.io/r/18829
+Project: software-factory/keycloak-github-ssh-key-attribute-mapper
+Branch: refs/heads/master
