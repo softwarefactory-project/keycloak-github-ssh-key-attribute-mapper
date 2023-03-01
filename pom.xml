@@ -34,7 +34,7 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
         <!-- dependency versions -->
-        <keycloak.version>10.0.2</keycloak.version>
+        <keycloak.version>21.0.0</keycloak.version>
 
         <lombok.version>1.18.12</lombok.version>
         <auto-service.version>1.0-rc7</auto-service.version>
