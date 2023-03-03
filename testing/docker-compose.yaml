@@ -1,0 +1,41 @@
+services:
+  db:
+    image: docker.io/mariadb:latest
+    environment:
+      MARIADB_USER: keycloak
+      MARIADB_DATABASE: keycloak
+      MARIADB_PASSWORD: keycloak
+      MARIADB_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+    networks:
+      - test_kc
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "--silent" ]
+  keycloak:
+    depends_on:
+      - db
+    image: localhost/test_kc_github_ssh_key_mapper
+    build:
+      context: ../
+      dockerfile: ./testing/Dockerfile
+      args: "KEYCLOAK_VERSION=$KEYCLOAK_VERSION"
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: kcadmin
+      KC_DB_USERNAME: keycloak
+      KC_DB_PASSWORD: keycloak
+      KC_HTTP_PORT: 8082
+      KC_HEALTH_ENABLED: true
+      JGROUPS_DISCOVERY_PROTOCOL: JDBC_PING
+    command:
+      - "start-dev"
+      - "--db=mariadb"
+      - "--db-url=jdbc:mariadb://db/keycloak"
+    ports:
+      - "8082:8082"
+    networks:
+      - test_kc
+networks:
+  test_kc:
+    driver: bridge

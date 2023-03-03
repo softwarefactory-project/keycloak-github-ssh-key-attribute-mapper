@@ -17,7 +17,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <groupId>org.softwarefactory.keycloak.social.github.sshkeysmapper</groupId>
-    <version>1.0.0</version>
+    <version>1.0.19</version>
 
     <name>Keycloak: Github provider SSH keys mapper</name>
     <description/>
@@ -29,19 +29,24 @@
     <properties>
         <!-- general settings -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
         <!-- dependency versions -->
-        <keycloak.version>10.0.2</keycloak.version>
+        <keycloak.version>19.0.2</keycloak.version>
 
-        <lombok.version>1.18.12</lombok.version>
+        <lombok.version>1.18.26</lombok.version>
         <auto-service.version>1.0-rc7</auto-service.version>
     </properties>
 
 
     <dependencies>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.14</version>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

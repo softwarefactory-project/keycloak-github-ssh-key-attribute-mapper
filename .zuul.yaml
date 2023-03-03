@@ -2,17 +2,9 @@
 - project:
     check:
       jobs:
-        - maven-build
-        - keycloak-test-deploy:
-            required-projects:
-              - software-factory/sf-ci
-            dependencies:
-              - maven-build
+        - keycloak-extensions-maven-build
+        - keycloak-extensions-test-deploy
     gate:
       jobs:
-        - maven-build
-        - keycloak-test-deploy:
-            required-projects:
-              - software-factory/sf-ci
-            dependencies:
-              - maven-build
+        - keycloak-extensions-maven-build
+        - keycloak-extensions-test-deploy
