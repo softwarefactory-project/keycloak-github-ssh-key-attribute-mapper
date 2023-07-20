@@ -8,6 +8,13 @@ This custom attribute mapper can be used to fetch a user's public SSH key whenev
 mvn clean install
 ```
 
+To build the SPI for use with a version of Keycloak prior to 22.X, you need to use openjdk 11 and patch pom.xml to target java 11:
+
+```
+<source>11</source>
+<target>11</target>
+```
+
 # Prerequisites
 
 A SQL database backend is required. The user attributes table must be manually modified to allow larger attributes like public keys.

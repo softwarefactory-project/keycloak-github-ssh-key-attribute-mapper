@@ -14,13 +14,14 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <groupId>org.softwarefactory.keycloak.social.github.sshkeysmapper</groupId>
-    <version>1.0.19</version>
+    <version>2.0.0</version>
 
     <name>Keycloak: Github provider SSH keys mapper</name>
-    <description/>
+    <description />
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>github-ssh-mapper</artifactId>
@@ -29,12 +30,12 @@
     <properties>
         <!-- general settings -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>11</java.version>
+        <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
         <!-- dependency versions -->
-        <keycloak.version>19.0.2</keycloak.version>
+        <keycloak.version>22.0.0</keycloak.version>
 
         <lombok.version>1.18.26</lombok.version>
         <auto-service.version>1.0-rc7</auto-service.version>
@@ -94,7 +95,8 @@
                         <!-- This is required since we need to add the jboss module references
                             to the resulting jar -->
                         <manifestEntries>
-                            <!-- Adding explicit dependencies to avoid class-loading issues at runtime -->
+                            <!-- Adding explicit dependencies to avoid class-loading issues at
+                            runtime -->
                             <Dependencies>
                                 <![CDATA[org.keycloak.keycloak-common,org.keycloak.keycloak-core,org.keycloak.keycloak-server-spi,org.keycloak.keycloak-server-spi-private,org.apache.httpcomponents,org.keycloak.keycloak-services,org.jboss.logging,javax.api,javax.jms.api,javax.transaction.api,com.fasterxml.jackson.core.jackson-core,com.fasterxml.jackson.core.jackson-annotations,com.fasterxml.jackson.core.jackson-databind]]></Dependencies>
                         </manifestEntries>

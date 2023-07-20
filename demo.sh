@@ -12,7 +12,7 @@ echo "Done."
 echo
 
 echo "Building keycloak with github ssh key mapper ..."
-podman build -t test_kc_github_ssh_key_mapper --build-arg KEYCLOAK_VERSION=${KEYCLOAK_VERSION:-21.0} -f testing/Dockerfile .
+podman build -t test_kc_github_ssh_key_mapper --build-arg KEYCLOAK_VERSION=${KEYCLOAK_VERSION:-22.0} -f testing/Dockerfile .
 echo "Done."
 echo
 
